@@ -11,7 +11,7 @@ void Matrix::reduceCol(const int& col)
 
 
     //getting the pivot point from input Col
-    const auto pivotNum = matrice[0][col];
+    const auto pivotNum = matrice.at(0).at(col);
 
 
     //TODO:iterate through the matrice
@@ -22,12 +22,13 @@ void Matrix::reduceCol(const int& col)
         //using at() instead of operator[] to avoid undefined behavior
         //TODO: avoid case that 0 / num
         try{
-            (matrice.at(row).at(col) == 0 ) ? : matrice.at(row).at(col) /= pivotNum;
+
+            (matrice.at(row).at(col) != 0 ) ? matrice.at(row).at(col) /= pivotNum;
         }
         catch(const auto& e)
         {
             //access out of bound
-            throw logic_error("access index location is out of bound")
+            throw logic_error("access index location is out of bound");
         }
     }
 
@@ -35,7 +36,7 @@ void Matrix::reduceCol(const int& col)
     //since the pivot number always start at index row 0 and fixed col, turns the remaining row in the col to 0
     for(auto row = 1; row < matrice.size(); ++row)
     {
-        matrice.at(i).at(col) = 0;
+        matrice.at(row).at(col) = 0;
     }
 
 }
