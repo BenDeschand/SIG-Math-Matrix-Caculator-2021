@@ -1,8 +1,19 @@
 #include <vector>
 #include <assert.h>
 #include "matrix.h"
+//TODO
 
-void Matrix::reduceCol(const int& col)
+// multiply each element of the row by the scalar value
+void matrix::multiScal(int scalar, int row) {
+
+   for(int i=0;i<col;i++) {
+     matrice[row][col] = matrice[row][col]*scalar; 
+   }
+
+}
+
+
+void matrix::reduceCol(const int& col)
 {
     //col muse be in bounds, and matrice must not be empty
     assert(col >= 0)
@@ -39,4 +50,5 @@ void Matrix::reduceCol(const int& col)
         matrice.at(row).at(col) = 0;
     }
 
-}
+
+}//Chris- reduce column
