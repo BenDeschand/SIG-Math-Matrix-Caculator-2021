@@ -1,12 +1,8 @@
 // Reduced Echelon Form
 // Matrix class with nested vectors
 // Same class as the calculator
- 
 // Input the matrices
- 
- 
 // Do inverse
- 
 // LU factorization
 #include <vector>
 
@@ -29,7 +25,7 @@ class Matrix
 		bool checkRow(int row);
 		void reduceRow(int row);
 		bool checkCol(int col);
-		//Change to const reference optimize avoid changing the value
+		//Change to const reference optimize, avoid changing the value
 		void reduceCol(const int& col);
 		void print();
 };
