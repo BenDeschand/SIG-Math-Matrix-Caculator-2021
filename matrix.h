@@ -5,6 +5,9 @@
 // Do inverse
 // LU factorization
 #include <vector>
+#include <vector>
+#include <assert.h>
+#include <stdexcept>
 
 using namespace std;
 
@@ -18,7 +21,7 @@ class matrix
 
 	public:
 		//Fix it to value[] instead of int[] value
-		matrix(int row, int col, int value[]);
+		matrix(int row, int col, double value[]);
 		void switchRow(int r1, int r2);
 		void multiScal(int scalar, int row);
 		void addRow(int r1, int r2);

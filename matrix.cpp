@@ -1,8 +1,8 @@
-#include <vector>
-#include <assert.h>
 #include "matrix.h"
-//TODO
-matrix::matrix(int row, int col, int value[])
+
+// matrix constructor
+// main constructor for the matrix class
+matrix::matrix(int row, int col, double value[])
 {
     assert(col > 0);
     assert(row > 0);
@@ -19,7 +19,7 @@ matrix::matrix(int row, int col, int value[])
         matrice.push_back(temp);
     }
 
-}
+}  // Ben Deschand - matrix constructor
 
 // multiply each element of the row by the scalar value
 void matrix::multiScal(int scalar, int row) {
