@@ -54,7 +54,7 @@ void matrix::reduceCol(const int& col)
 
             (matrice.at(row).at(col) != 0 ) ? matrice.at(row).at(col) /= pivotNum;
         }
-        catch(const auto& e)
+        catch(const int& e)
         {
             //access out of bound
             throw logic_error("access index location is out of bound");
@@ -84,7 +84,7 @@ bool matrix::checkCol(int col)
     {
         if(r == col)
         {
-            if(matrice.at(r).at(col) == 1)
+            if(matrice.at(r).at(col) == 1)    // checks if value is at pivot value
             {
                 isGood = true;
             }
@@ -95,7 +95,7 @@ bool matrix::checkCol(int col)
         }
         else
         {
-            if(matrice.at(r).at(col) == 0)
+            if(matrice.at(r).at(col) == 0)    // for every other value in the column
             {
                 isGood = true;
             }
