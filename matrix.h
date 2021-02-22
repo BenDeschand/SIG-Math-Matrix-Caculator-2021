@@ -6,17 +6,19 @@
 // LU factorization
 #include <vector>
 
-class Matrix
+using namespace std;
+
+class matrix
 {
 	// first row and col are considered 0
 	private:
-		std::vector<std::vector<double>> matrice;
+		vector<std::vector<double>> matrice;
 		int row;  // matrice.size()
 		int col;   // matrice[0].size()
 
 	public:
 		//Fix it to value[] instead of int[] value
-		Matrix(int row, int col, int value[]);
+		matrix(int row, int col, int value[]);
 		void switchRow(int r1, int r2);
 		void multiScal(int scalar, int row);
 		void addRow(int r1, int r2);

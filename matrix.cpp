@@ -2,6 +2,24 @@
 #include <assert.h>
 #include "matrix.h"
 //TODO
+matrix::matrix(int row, int col, int value[])
+{
+    assert(col > 0);
+    assert(row > 0);
+
+    for(int r = 0; r < row; r++)
+    {
+        vector<double> temp;
+
+        for(int c = 0; c < col; c++)
+        {
+            temp.push_back(value[r + c]);
+        }
+
+        matrice.push_back(temp);
+    }
+
+}
 
 // multiply each element of the row by the scalar value
 void matrix::multiScal(int scalar, int row) {
@@ -16,9 +34,9 @@ void matrix::multiScal(int scalar, int row) {
 void matrix::reduceCol(const int& col)
 {
     //col muse be in bounds, and matrice must not be empty
-    assert(col >= 0)
-    assert(col < matrice.size())
-    assert(!matrice.empty())
+    assert(col >= 0);
+    assert(col < matrice.size());
+    assert(!matrice.empty());
 
 
     //getting the pivot point from input Col
