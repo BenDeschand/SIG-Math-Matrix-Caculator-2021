@@ -70,3 +70,41 @@ void matrix::reduceCol(const int& col)
 
 
 }//Chris- reduce column
+
+
+// checkCol
+// checks if the specfic column is reduced (every value 0 except the pivot value)
+bool matrix::checkCol(int col)
+{
+    assert(this->col > col);
+
+    bool isGood = true;
+
+    for(int r = 0; r < row; r++)
+    {
+        if(r == col)
+        {
+            if(matrice.at(r).at(col) == 1)
+            {
+                isGood = true;
+            }
+            else
+            {
+                isGood = false;
+            }
+        }
+        else
+        {
+            if(matrice.at(r).at(col) == 0)
+            {
+                isGood = true;
+            }
+            else
+            {
+                isGood = false;
+            }
+        }
+    }
+
+    return isGood;
+} // Ben Deschand - checkCol
