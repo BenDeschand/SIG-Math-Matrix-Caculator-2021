@@ -136,3 +136,29 @@ void matrix::reduceMatrix() {
         }
     }
 } // Ayush Patel - reduceMatrix
+
+// checkRow
+// check if the row is reduced to 0's and checks if the pivot is 1.
+bool matrix::checkRow(int row) {
+    assert(this->row > row);
+    bool isGood = true;
+
+    for(int c = 0; c < col; c++) {
+        if(c == row) {
+            if(matrice.at(row).at(c) == 1) {  // checks if value is at pivot value
+                isGood = true;
+
+            } else {
+                isGood = false;
+            }
+        } else {
+            if(matrice.at(row).at(c) == 0) {  // for every other value in the row
+                isGood = true;
+
+            } else {
+                isGood = false;
+            }
+        }
+    }
+    return isGood;
+} // Christian Gutierrez - checkRow
