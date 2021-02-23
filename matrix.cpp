@@ -124,3 +124,15 @@ bool matrix::checkCol(int col)
 
     return isGood;
 } // Ben Deschand - checkCol
+
+// reduceMatrix
+// uses other functions to reduce the matrix.
+
+void matrix::reduceMatrix() {
+
+    if(!isReduced) { // checks if matrix is already reduced
+        for (int col = 0; col < matrix[0].size() - 1; ++col) { // does not reduce the last column
+            reduceCol(col);
+        }
+    }
+} // Ayush Patel - reduceMatrix
