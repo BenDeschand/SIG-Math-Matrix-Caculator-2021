@@ -68,7 +68,7 @@ void matrix::reduceCol(const int& col)
         //TODO: avoid case that 0 / num
         try{
 
-            (matrice.at(row).at(col) != 0 ) ? matrice.at(row).at(col) /= pivotNum;
+            matrice.at(row).at(col) = ( matrice.at(row).at(col) != 0 ) ? ( matrice.at(row).at(col) / pivotNum) :  0;  
         }
         catch(const int& e)
         {
