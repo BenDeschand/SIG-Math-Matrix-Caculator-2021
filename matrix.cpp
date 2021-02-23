@@ -131,7 +131,7 @@ bool matrix::checkCol(int col)
 void matrix::reduceMatrix() {
 
     if(!isReduced) { // checks if matrix is already reduced
-        for (int col = 0; col < matrix[0].size() - 1; ++col) { // does not reduce the last column
+        for (int col = 0; col < matrice[0].size() - 1; ++col) { // does not reduce the last column
             reduceCol(col);
         }
     }
