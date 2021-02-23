@@ -21,16 +21,16 @@ class matrix
 
 	public:
 		//Fix it to value[] instead of int[] value
-		matrix(int row, int col, double value[]);
-		void switchRow(int r1, int r2);
-		void multiScal(int scalar, int row);
-		void addRow(int r1, int r2);
-		bool isReduced();
-		void reduceMatrix();
-		bool checkRow(int row);
-		void reduceRow(int row);
-		bool checkCol(int col);
+		matrix(int row, int col, double value[]);   // done
+		void switchRow(int r1, int r2);             // done
+		void multiScal(int scalar, int row);        // done
+		void addRow(int r1, int r2);                // done
+		bool isReduced();                           // Christian
+		void reduceMatrix();                        // Ayush
+		bool checkRow(int row);                     // Christian
+		// void reduceRow(int row); 
+		bool checkCol(int col);                     // done
 		//Change to const reference optimize, avoid changing the value
-		void reduceCol(const int& col);
-		void print();
+		void reduceCol(const int& col);             // done?
+		void print();                               // Sreten
 };
