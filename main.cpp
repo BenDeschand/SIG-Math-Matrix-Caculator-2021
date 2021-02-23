@@ -11,5 +11,5 @@ int main()
     cin >> col;
 
     int size = row + col;
-    int val[] = new int[size];
+    int* val = new int[size];
 }
