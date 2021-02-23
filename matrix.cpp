@@ -21,6 +21,16 @@ matrix::matrix(int row, int col, double value[])
 
 }  // Ben Deschand - matrix constructor
 
+
+void matrix::addRow(int r1, int r2)
+{
+    for(int i = 0; i < col; i++) //Loop through each column
+    {
+        matrice[r1][i] += matrice[r2][i]; //Add each value in r2 to r1
+    }
+} // Vivek Patel - addRow
+
+
 // multiply each element of the row by the scalar value
 void matrix::multiScal(int scalar, int row) {
 
