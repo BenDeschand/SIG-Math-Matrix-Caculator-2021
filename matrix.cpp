@@ -21,6 +21,12 @@ matrix::matrix(int row, int col, double value[])
 
 }  // Ben Deschand - matrix constructor
 
+void switchRow(int r1, int r2) {
+	if (r1 >= row.size() || r2 >= row.size() || r1 < 0 || r2 < 0) {
+		throw out_of_range("row is out of bounds");
+	}
+	matrice[r1].swap(matrice[r2]);	
+} // Sreten Kljaic - switch row
 
 void matrix::addRow(int r1, int r2)
 {
@@ -39,7 +45,6 @@ void matrix::multiScal(int scalar, int row) {
    }
 
 }
-
 
 void matrix::reduceCol(const int& col)
 {
