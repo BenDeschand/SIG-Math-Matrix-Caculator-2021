@@ -9,6 +9,7 @@
 #include <vector>
 #include <assert.h>
 #include <stdexcept>
+#include <iostream>
 
 using namespace std;
 
@@ -27,7 +28,7 @@ class matrix
 		void multiScal(int scalar, int row);        // done
 		void addRow(int r1, int r2);                // done
 		bool isReduced();                           // Christian
-		void reduceMatrix();                        // Ayush
+		void reduceMatrix();                        // done
 		bool checkRow(int row);                     // Christian
 		// void reduceRow(int row); 
 		bool checkCol(int col);                     // done
