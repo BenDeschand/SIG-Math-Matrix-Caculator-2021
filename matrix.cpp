@@ -1,5 +1,7 @@
 #include "matrix.h"
 
+//default constructor: suggestion
+
 // matrix constructor
 // main constructor for the matrix class
 matrix::matrix(int row, int col, double value[])
@@ -86,6 +88,12 @@ void matrix::reduceCol(const int& col)
 
 
 }//Chris- reduce column
+
+
+const int matrix::rowSize() const
+{
+    return matrice.size();
+}
 
 
 // checkCol
