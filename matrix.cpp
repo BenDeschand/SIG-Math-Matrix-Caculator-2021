@@ -157,16 +157,42 @@ bool matrix::checkRow(int row) {
                 isGood = true;
 
             } else {
-                isGood = false;
+                // isGood = false;
+		return false;
             }
         } else {
             if(matrice.at(row).at(c) == 0) {  // for every other value in the row
                 isGood = true;
 
             } else {
-                isGood = false;
+                return false;
             }
         }
     }
     return isGood;
 } // Christian Gutierrez - checkRow
+
+// isReduced
+// checks if the specfic rows and columns are reduced (every value 0 except the pivot value)
+// checks the rows and columns seperately for effieciency
+bool matrix::isReduced() {
+	int numRows = matrice.size();
+	int numCols = matrice.at[0].size();
+
+	for (int i = 0; i < numCols; i++) {  // check every row of the matrix is reduced
+		if (checkRow(i) == false) {
+			return false;
+		}
+	}
+	
+
+	for (int j = 0; j < numRows; j++) {	 // check every column of the matrix is reduced
+		if (checkCol(j) == false) {
+			return false;
+		}
+	}
+	
+	return true;
+}  // Christian Gutierrez - isReduced
+
+
