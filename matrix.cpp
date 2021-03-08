@@ -31,6 +31,25 @@ void matrix::switchRow(int r1, int r2) {
 	matrice[r1].swap(matrice[r2]);	
 } // Sreten Kljaic - switch row
 
+
+bool matrix::checkRow()
+{
+    for(int i = 0; i < col-1; i++)
+    {
+        for(int j = 0; j < row; j ++;)
+        {
+            if(i == j)
+                if(matrix[i][j] != 1)
+                    return false;
+            else
+                if(matrix[i][j] != 0)
+                    return false;
+        }
+    }
+
+    return true;
+}//Vivek Patel - checkRow
+
 void matrix::addRow(int r1, int r2)
 {
     for(int i = 0; i < col; i++) //Loop through each column
