@@ -35,6 +35,6 @@ class matrix
 		//Change to const reference optimize, avoid changing the value
 		void reduceCol(const int& col);             // done?
 		void print();                               // Sreten
-
+	    bool checkRowV2(int row);
 		const int rowSize() const;  // helper fuction--Chris
 };

@@ -32,17 +32,17 @@ void matrix::switchRow(int r1, int r2) {
 } // Sreten Kljaic - switch row
 
 
-bool matrix::checkRow()
+bool matrix::checkRow(int row)
 {
     for(int i = 0; i < col-1; i++)
     {
-        for(int j = 0; j < row; j ++;)
+        for(int j = 0; j < row; j++)
         {
             if(i == j)
-                if(matrix[i][j] != 1)
+                if(matrice[i][j] != 1)
                     return false;
             else
-                if(matrix[i][j] != 0)
+                if(matrice[i][j] != 0)
                     return false;
         }
     }
@@ -157,7 +157,7 @@ bool matrix::checkCol(int col)
 
 void matrix::reduceMatrix() {
 
-    if(!isReduced) { // checks if matrix is already reduced
+    if(!isReduced()) { // checks if matrix is already reduced
         for (int col = 0; col < matrice[0].size() - 1; ++col) { // does not reduce the last column
             reduceCol(col);
         }
@@ -166,7 +166,7 @@ void matrix::reduceMatrix() {
 
 // checkRow
 // check if the row is reduced to 0's and checks if the pivot is 1.
-bool matrix::checkRow(int row) {
+bool matrix::checkRowV2(int row) {
     assert(this->row > row);
     bool isGood = true;
 
@@ -177,7 +177,7 @@ bool matrix::checkRow(int row) {
 
             } else {
                 // isGood = false;
-		return false;
+		        return false;
             }
         } else {
             if(matrice.at(row).at(c) == 0) {  // for every other value in the row
@@ -196,7 +196,7 @@ bool matrix::checkRow(int row) {
 // checks the rows and columns seperately for effieciency
 bool matrix::isReduced() {
 	int numRows = matrice.size();
-	int numCols = matrice.at[0].size();
+	int numCols = matrice.at(0).size();
 
 	for (int i = 0; i < numCols; i++) {  // check every row of the matrix is reduced
 		if (checkRow(i) == false) {
@@ -215,3 +215,15 @@ bool matrix::isReduced() {
 }  // Christian Gutierrez - isReduced
 
 
+void matrix::print()
+{
+    for( const auto &x: matrice)
+    {
+        for(const auto &y : x)
+        {
+            std::cout <<  y << " ";
+        }
+        std::cout << std::endl;
+    }
+
+}
